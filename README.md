@@ -6,6 +6,7 @@ This starter template shows how to build client websites in minutes using one pr
 It’s perfect for freelancers or developers who want to create multiple client websites without rebuilding the same layout repeatedly.
 
 git clone https://github.com/yourusername/client-website-starter.git
+
 cd client-website-starter
 pnpm install
 pnpm dev
