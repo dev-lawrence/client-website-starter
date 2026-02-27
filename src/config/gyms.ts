@@ -137,6 +137,11 @@ export const gyms: Gym[] = [
         author: 'Chris B.',
         duration: '1 year',
       },
+      {
+        text: "The trainer's guidance has helped me reach my fitness goals.",
+        author: 'Emily M.',
+        duration: '2 years',
+      },
     ],
     theme: {
       light: {
@@ -227,6 +232,11 @@ export const gyms: Gym[] = [
       {
         text: 'I gained confidence, discipline, and real results thanks to their amazing trainers.',
         author: 'Alex M.',
+        duration: '1 year',
+      },
+      {
+        text: 'I gained confidence, discipline, and real results thanks to their amazing trainers.',
+        author: 'Alex James',
         duration: '1 year',
       },
     ],
