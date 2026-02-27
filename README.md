@@ -8,7 +8,9 @@ It’s perfect for freelancers or developers who want to create multiple client 
 git clone https://github.com/yourusername/client-website-starter.git
 
 cd client-website-starter
+
 pnpm install
+
 pnpm dev
 
 ## Demo / Preview
