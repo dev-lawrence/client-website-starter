@@ -1,0 +1,32 @@
+---
+import Layout from '@/layouts/Layout.astro';
+import Hero from '@/sections/Hero.astro';
+import Results from '@/sections/Results.astro';
+import Services from '@/sections/Services.astro';
+import About from '@/sections/About.astro';
+import CTA from '@/sections/CTA.astro';
+import { gyms } from '@/config/gyms';
+
+export const prerender = true;
+
+export function getStaticPaths() {
+  return gyms.map((gym) => ({
+    params: { gym: gym.slug },
+    props: { gym },
+  }));
+}
+
+const { gym } = Astro.props;
+---
+
+<Layout gym={gym}>
+  <Hero gym={gym} />
+
+  <Services gym={gym} />
+
+  <Results gym={gym} />
+
+  <About gym={gym} />
+
+  <CTA gym={gym} />
+</Layout>

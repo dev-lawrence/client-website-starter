@@ -1,0 +1,54 @@
+---
+import Header from '@/components/Header';
+import '../styles/global.css';
+import { ClientRouter } from 'astro:transitions';
+
+import '@fontsource/poppins/400.css';
+import '@fontsource/poppins/500.css';
+import '@fontsource/poppins/600.css';
+import '@fontsource/poppins/700.css';
+import '@fontsource/poppins/800.css';
+import '@fontsource/poppins/900.css';
+import Footer from '@/components/Footer.astro';
+
+const { gym } = Astro.props;
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" href={gym.logo} />
+    <meta name="generator" content={Astro.generator} />
+    <meta
+      name="description"
+      content={`${gym.name} - Your Trusted Personal Fitness Coach`}
+    />
+    <ClientRouter />
+    <title>{gym.name}</title>
+
+    <style
+      define:vars={{
+        lightPrimary: gym.theme.light.primary,
+        lightPrimaryForeground: gym.theme.light.primaryForeground,
+        darkPrimary: gym.theme.dark.primary,
+        darkPrimaryForeground: gym.theme.dark.primaryForeground,
+      }}
+    >
+      :root {
+        --primary: var(--lightPrimary);
+        --primary-foreground: var(--lightPrimaryForeground);
+      }
+      .dark {
+        --primary: var(--darkPrimary);
+        --primary-foreground: var(--darkPrimaryForeground);
+      }
+    </style>
+  </head>
+  <body class="font-poppins">
+    <Header client:load gymName={gym.name} gymLogo={gym.logo} />
+    <slot />
+    <Footer gym={gym} />
+  </body>
+</html>
